@@ -4,8 +4,10 @@
   --primary-color-1: #F9F5F8;
   --primary-color-2: #2F362B;
   --accent-color-1: #FFFFFF;
-  --pink-gradient: linear-gradient(180deg, #F9F5F8 50%, #E0D5DD 100%);
-  --green-gradient: linear-gradient(180deg, #2F362B 50.5%, #1F241C 100%);
+  --pink-gradient: linear-gradient(to bottom, #F9F5F8, #E0D5DD);
+  --green-gradient: linear-gradient(to bottom, #2F362B, #1F241C);
+  --webkit-pink-gradient: -webkit-linear-gradient(to bottom, #F9F5F8, #E0D5DD);
+  --webkit-green-gradient: -webkit-linear-gradient(to bottom, #2F362B, #1F241C);
   --primary-font: 'Inter', sans-serif;
   --secondary-font: 'Times Now', serif;
 }
@@ -20,33 +22,40 @@ a:hover {
 }
 
 body {
-  margin: 0;
+  background: #F9F5F8; /* fallback for old browsers */
+  background: var(--webkit-pink-gradient) !important; /* Chrome 10-25, Safari 5.1-6 */
+  background: var(--pink-gradient) !important; 
   display: flex;
   place-items: center;
-  min-width: 320px;
   min-height: 100vh;
   font-family: var(--primary-font);
   font-size: 1rem;
   line-height: 1.2;
 }
 
-.heading {
-  font-size: 4rem;
-  text-transform: uppercase;
-}
-
-.subheading {
-  text-transform: uppercase;
-}
-
 .body-text {
   font-family: var(--secondary-font);
+  color: var(--primary-color-2);
 }
 
-.landing-text {
-  width: 40rem;
-  left: 0;
-  bottom: 1;
+.nav {
+  font-family: var(--primary-font);
+  text-transform: uppercase;
+}
+
+.landing-content {
+  background-image: url('/svg/infinity_color.svg');
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+  min-height: 100vh; 
+  min-width: 100vw;
+}
+
+.hero {
+  padding: 5rem;
+  max-width: 60rem;
+  color: var(--primary-color-2);
 }
 
 button {
@@ -60,23 +69,18 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+@media (max-width: 768px) {
+  .hero {
+    padding: 2rem;
   }
 }
