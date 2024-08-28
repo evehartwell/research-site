@@ -1,35 +1,27 @@
 import React from 'react';
-import {
-    Box,
-    Text,
-    Flex,
-    Container,
-    Heading,
-} from '@chakra-ui/react';
-import './index.css';
+import { Box, Flex, Button, Link } from '@chakra-ui/react';
 
 const Navigation = () => {
     return (
-        <Box>
-            <Flex className="nav" align="center">
-                <Flex className="nav-links" justify="space-between">
-                    <Link to="/" className="nav-item">
-                        <Button variant="ghost" className="nav-button">Home</Button>
+        <Box className="nav" width="100%" py={4} position="fixed" zIndex={1000}>
+            <Flex justify="center" align="center" maxW="container.xl" mx="auto" px={6}>
+                <Flex gap={20}>
+                    <Link href="/">
+                        <Button variant="ghost">Home</Button>
                     </Link>
-                    <Link to="/" className="nav-item">
-                        <Button variant="ghost" className="nav-button">About</Button>
+                    <Link href="/about">
+                        <Button variant="ghost">About</Button>
                     </Link>
-                    <Link to="/" className="nav-item">
-                        <Button variant="ghost" className="nav-button">Resources</Button>
+                    <Link href="/resources">
+                        <Button variant="ghost">Resources</Button>
                     </Link>
-                    <Link to="/" className="nav-item">
-                        <Button variant="ghost" className="nav-button">Related Works</Button>
+                    <Link href="/works">
+                        <Button variant="ghost">Related Works</Button>
                     </Link>
                 </Flex>
             </Flex>
         </Box>
-        
-    )
+    );
 };
 
 export default Navigation;
