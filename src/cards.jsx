@@ -1,52 +1,65 @@
 import React from 'react';
 import {
     Box,
-    Grid,
-    Heading,
-    Image,
-    Stack,
     Text,
-    Card,
-    CardBody,
+    Flex,
+    Container,
+    Heading,
+    SimpleGrid,
+    Image,
+    Button,
+    Stack,
+    useBreakpointValue,
 } from '@chakra-ui/react';
 
 const CardGroup = () => {
     return (
-        <Box p={0}>
-            <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }} 
-                gap={6}
-                justifyContent="center" 
+        <Container maxW="container.xl" p={4} mt={10}>
+            <Heading 
+                as="h2" 
+                size="lg" 
+                mb={8} 
+                textAlign="left" 
+                fontWeight="medium"
+                textTransform="uppercase"
+                color="var(--primary-color-1)"
             >
-                <Card maxW="md" mx="auto" bgColor='none' boxShadow='none'>
-                    <CardBody>
-                        <Image src='/images/GOY.png' alt='GOY' borderRadius='md' />
-                        <Stack mt={4} spacing={3} textColor='var(--primary-color-1)'>
-                            <Heading size='md'>Link 1</Heading>
-                            <Text>description</Text>
-                        </Stack>
-                    </CardBody>
-                </Card>
-                <Card maxW="md" mx="auto" bgColor='none'  boxShadow='none'>
-                    <CardBody>
-                        <Image src='/images/ssense.png' alt='ssense' borderRadius='md' />
-                        <Stack mt={4} spacing={3} textColor='var(--primary-color-1)'>
-                            <Heading size='md'>Link 2</Heading>
-                            <Text>description</Text>
-                        </Stack>
-                    </CardBody>
-                </Card>
-                <Card maxW="md" mx="auto" bgColor='none'  boxShadow='none'>
-                    <CardBody>
-                        <Image src='/images/TRR.png' alt='TRR' borderRadius='md' />
-                        <Stack mt={4} spacing={3} textColor='var(--primary-color-1)'>
-                            <Heading size='md'>Link 3</Heading>
-                            <Text>description</Text>
-                        </Stack>
-                    </CardBody>
-                </Card>
-            </Grid>
-        </Box>
+                Sites I Love
+            </Heading>
+            <SimpleGrid
+                columns={{ base: 1, sm: 2, md: 3 }}  // Responsive columns
+                spacing={8}
+                alignItems="center"
+                justifyContent="center"
+            >
+                {CARD_DATA.map((card) => (
+                    <Box
+                        key={card.title}
+                        position="relative"
+                        borderRadius="lg"
+                        overflow="hidden"
+                    >
+                        <Image src={card.image} alt={card.title} />
+                    </Box>
+                ))}
+            </SimpleGrid>
+        </Container>
     );
 };
+
+const CARD_DATA = [
+    {
+        image: '/images/GOY.png', // Replace with your image paths
+        description: 'Good For You',
+    },
+    {
+        image: '/images/ssense.png',
+        description: 'SSENSE Tech Blog',
+    },
+    {
+        image: '/images/TRR.png',
+        description: 'TheRealReal',
+    },
+];
 
 export default CardGroup;

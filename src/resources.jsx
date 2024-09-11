@@ -17,7 +17,7 @@ import BioGrid from './bios';
 
 const Resources = () => {
     return (
-        <Container maxW="100vw" p={0} pt={10} bg="var(--green-gradient)">
+        <Container maxW="100vw" bg="var(--green-gradient)">
             <Navigation isDarkBackground={true} />
             <CardGroup />
             <BioGrid />

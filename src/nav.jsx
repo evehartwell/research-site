@@ -32,9 +32,10 @@ const Navigation = ({ isDarkBackground }) => {
                 <Flex flex={{ base: 1, md: 'auto' }} ml={{ base: -2 }} display={{ base: 'flex', md: 'none' }}>
                     <IconButton
                         onClick={onToggle}
-                        icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />}
+                        icon={isOpen ? <CloseIcon w={6} h={6} /> : <HamburgerIcon w={6} h={6} />}
                         variant={'ghost'}
                         aria-label={'Toggle Navigation'}
+                        color={textColor} // Set icon color dynamically
                     />
                 </Flex>
                 <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'center' }}>
@@ -43,7 +44,6 @@ const Navigation = ({ isDarkBackground }) => {
                     </Flex>
                 </Flex>
             </Flex>
-
             <Collapse in={isOpen} animateOpacity>
                 <MobileNav textColor={textColor} hoverBorderColor={hoverBorderColor} />
             </Collapse>

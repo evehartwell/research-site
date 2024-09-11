@@ -13,10 +13,10 @@ import './index.css';
 
 const BioGrid = () => {
     return (
-        <Container maxW="container.xl" p={4} mt={8}>
+        <Container maxW="container.xl" pl={4} mt={10}>
             <Heading 
                 as="h2" 
-                size="xl" 
+                size="lg" 
                 mb={8} 
                 textAlign="left" 
                 fontWeight="medium"
@@ -28,14 +28,18 @@ const BioGrid = () => {
             <SimpleGrid 
                 className='bio-grid' 
                 direction={{ base: 'column', md: 'row' }}  
-                columns={2} 
+                columns={{ base: '1', md: '2' }}  
                 gap={10}
-                p={20}
+                p={5}
                 textColor='var(--primary-color-1)'
             >
-                
                 <Box className='bio-content'>
-                    <Image src='/images/danielle.png' alt='/' maxW={150} m={5} />
+                    <Image 
+                        src='/images/danielle.png' 
+                        alt='/' 
+                        maxW={{ base: 100, md: 150 }}  
+                        m={5}
+                    />
                     <Box m={5}>
                         <Heading size='md'>
                             Bio 1
@@ -46,7 +50,12 @@ const BioGrid = () => {
                     </Box>
                 </Box>
                 <Box className='bio-content'>
-                    <Image src='/images/bliss.jpg' alt='/' maxW={150} m={5} />
+                    <Image 
+                        src='/images/bliss.jpg' 
+                        alt='/' 
+                        maxW={{ base: 100, md: 150 }}  
+                        m={5}
+                    />
                     <Box m={5}>
                         <Heading size='md'>
                             Bio 2
@@ -57,7 +66,12 @@ const BioGrid = () => {
                     </Box>
                 </Box>
                 <Box className='bio-content'>
-                    <Image src='/images/rian.jpg' alt='/' maxW={150} m={5} />
+                    <Image 
+                        src='/images/rian.jpg' 
+                        alt='/' 
+                        maxW={{ base: 100, md: 150 }}  
+                        m={5}
+                    />
                     <Box m={5}>
                         <Heading size='md'>
                             Bio 3
