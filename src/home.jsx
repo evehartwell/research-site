@@ -29,6 +29,7 @@ const Homepage = () => {
                 backgroundSize={{ base: "cover", md: "contain" }}
                 backgroundPosition="right"
                 backgroundRepeat="no-repeat"
+                textColor='var(--primary-color-2)'
             >
                 <Flex
                     position="absolute"
@@ -38,7 +39,7 @@ const Homepage = () => {
                     p={padding}
                 >
                     <VStack align="flex-start" spacing={6} maxW={heroMaxWidth}>
-                        <Heading fontSize={headingSize} textTransform="uppercase" fontWeight="medium">
+                        <Heading fontSize={headingSize} textTransform="uppercase" fontWeight="regular">
                             Reshaping Fashion Discourse
                         </Heading>
                         <Text textTransform="uppercase">
@@ -60,6 +61,7 @@ const Homepage = () => {
                                     cursor: 'pointer',
                                     transition: 'border-color 0.25s',
                                     textTransform: 'uppercase',
+                                    textColor: 'var(--primary-color-2)',
                                     borderColor: 'var(--primary-color-2)',
                                     _hover: {
                                         bgColor: 'none', 
