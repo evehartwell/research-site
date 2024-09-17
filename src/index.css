@@ -19,6 +19,32 @@ a:hover {
   
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  height: 100%;
+  overflow: hidden; /* Prevent scrolling on the app container */
+}
+
+.snap-container {
+  min-height: 100vh; /* Full viewport height */
+  overflow-y: scroll;
+  scroll-snap-align: start;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.snap-section {
+  min-height: 100vh; /* Full viewport height */
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+
 body {
   background: #F9F5F8; /* fallback for old browsers */
   background: var(--webkit-pink-gradient) !important; /* Chrome 10-25, Safari 5.1-6 */

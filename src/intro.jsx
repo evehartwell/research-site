@@ -1,6 +1,7 @@
 import React from 'react';
 import {
     Box,
+    Container,
     Text,
     Flex,
     VStack,
@@ -9,28 +10,24 @@ import {
     Link,
     useBreakpointValue,
 } from '@chakra-ui/react';
-import Navigation from './nav';
 
-const Homepage = () => {
-    const padding = useBreakpointValue({ base: 4, md: 8, lg: 16 });
-    const heroMaxWidth = useBreakpointValue({ base: "100%", md: "70%", lg: "50%" });
+const Intro = () => {
+    const padding = useBreakpointValue({ base: 4, md: 8, lg: 8 });
+    const heroMaxWidth = useBreakpointValue({ base: "100%", md: "70%", lg: "60%" });
     const headingSize = useBreakpointValue({ base: "4xl", md: "5xl", lg: "6xl" });
 
     return (
-        <Box minH="100vh" position="relative" overflow="hidden">
-            <Navigation isDarkBackground={false} />
-            <Flex
-                position="absolute"
-                top={0}
-                left={0}
-                right={0}
-                bottom={0}
-                backgroundImage="url('/svg/infinity_color.svg')"
-                backgroundSize={{ base: "cover", md: "contain" }}
-                backgroundPosition="right"
-                backgroundRepeat="no-repeat"
-                textColor='var(--primary-color-2)'
-            >
+        <Box
+            minH="90vh"
+            position="relative"
+            overflow="hidden"
+            backgroundImage="url('/svg/infinity_color.svg')"
+            backgroundSize={{ base: "cover", md: "contain" }}
+            backgroundPosition="right"
+            backgroundRepeat="no-repeat"
+            width="100%" 
+        >
+            <Container maxW="1600px" height="100%">
                 <Flex
                     position="absolute"
                     bottom={0}
@@ -38,7 +35,7 @@ const Homepage = () => {
                     right={0}
                     p={padding}
                 >
-                    <VStack align="flex-start" spacing={6} maxW={heroMaxWidth}>
+                    <VStack align="flex-start" spacing={4} maxW={heroMaxWidth}>
                         <Heading fontSize={headingSize} textTransform="uppercase" fontWeight="regular">
                             Reshaping Fashion Discourse
                         </Heading>
@@ -73,9 +70,9 @@ const Homepage = () => {
                         </Link>
                     </VStack>
                 </Flex>
-            </Flex>
+            </Container>
         </Box>
     );
-};
+}
 
-export default Homepage;
+export default Intro;

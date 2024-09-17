@@ -117,9 +117,9 @@ const MobileNav = ({ textColor, hoverBorderColor }) => {
 };
 
 const NAV_ITEMS = [
-    { label: 'Home', href: '/' },
-    { label: 'About', href: '/about' },
+    { label: 'Intro', href: '/' },
     { label: 'Resources', href: '/resources' },
+    { label: 'About', href: '/about' },
     { label: 'Related Works', href: '/papers' },
 ];
 

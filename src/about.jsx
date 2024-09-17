@@ -1,55 +1,48 @@
 import React from 'react';
 import {
     Box,
-    Container,
+    Text,
+    Flex,
     VStack,
     Heading,
-    Text,
     Button,
     Link,
-    useBreakpointValue
+    useBreakpointValue,
+    Container,
 } from '@chakra-ui/react';
-import Navigation from './nav';
 
 const AboutPage = () => {
-    const contentWidth = useBreakpointValue({ base: "90%", md: "80%", lg: "70%" });
-    const headingSize = useBreakpointValue({ base: "lg", md: "xl" });
+    const padding = useBreakpointValue({ base: 4, md: 8, lg: 8 });
+    const contentMaxWidth = useBreakpointValue({ base: "100%", md: "70%", lg: "60%" });
+    const headingSize = useBreakpointValue({ base: "4xl", md: "5xl", lg: "4xl" });
     const textSize = useBreakpointValue({ base: "sm", md: "md" });
 
     return (
-        <Box minHeight="100vh">
-            <Navigation isDarkBackground={false} />
-            <Container maxW="container.xl" pt={{ base: "80px", md: "100px" }}>
-                <VStack spacing={12} align="start" width={contentWidth} margin="0 auto">
+        <Container maxW="1600px" minH="100vh" position="relative" overflow="hidden">
+            <Flex
+                position="absolute"
+                top={0}
+                left={0}
+                right={0}
+                bottom={0}
+                p={padding}
+            >
+                <VStack align="flex-start" spacing={8} maxW={contentMaxWidth}>
                     <Box>
-                        <Heading 
-                            as="h1" 
-                            size={headingSize} 
-                            textTransform="uppercase" 
-                            fontWeight="medium" 
-                            mb={5}
-                            color="var(--primary-color-2)"
-                        >
+                        <Heading fontSize={headingSize} textTransform="uppercase" fontWeight="regular" color="var(--primary-color-2)" mb={4}>
                             About The Author
                         </Heading>
-                        <Text className="body-text" fontSize={textSize} mb={5} color="var(--primary-color-2)">
+                        <Text className="body-text" fontSize={textSize} color="var(--primary-color-2)" mb={4}>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu odio nibh. Phasellus faucibus convallis elit sed dictum. Sed porttitor erat sit amet nunc lobortis ultrices. 
                             Quisque porta nunc quis urna elementum, quis consequat lacus sodales. Integer iaculis mauris ac massa iaculis placerat. Suspendisse efficitur consequat erat vestibulum finibus.
                         </Text>
                     </Box>
                     
                     <Box>
-                        <Heading 
-                            as="h2" 
-                            size={headingSize} 
-                            textTransform="uppercase" 
-                            fontWeight="medium" 
-                            mb={5}
-                            color="var(--primary-color-2)"
-                        >
+                        <Heading fontSize={headingSize} textTransform="uppercase" fontWeight="regular" color="var(--primary-color-2)" mb={4}>
                             About The Paper
                         </Heading>
-                        <Text className="body-text" fontSize={textSize} mb={5} color="var(--primary-color-2)">
+                        <Text className="body-text" fontSize={textSize} color="var(--primary-color-2)" mb={4}>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu odio nibh. Phasellus faucibus convallis elit sed dictum. Sed porttitor erat sit amet nunc lobortis ultrices. 
                             Quisque porta nunc quis urna elementum, quis consequat lacus sodales. Integer iaculis mauris ac massa iaculis placerat. Suspendisse efficitur consequat erat vestibulum finibus.
                         </Text>
@@ -66,18 +59,19 @@ const AboutPage = () => {
                                 cursor: 'pointer',
                                 transition: 'border-color 0.25s',
                                 textTransform: 'uppercase',
+                                textColor: 'var(--primary-color-2)',
                                 borderColor: 'var(--primary-color-2)',
                                 _hover: {
                                     bgColor: 'none', 
                                 },
                             }}
-                            >
-                                Read the Paper
+                        >
+                            Read the Paper
                         </Button>
                     </Link>
                 </VStack>
-            </Container>
-        </Box>
+            </Flex>
+        </Container>
     );
 };
 

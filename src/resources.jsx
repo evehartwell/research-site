@@ -11,14 +11,12 @@ import {
     Image,
 } from '@chakra-ui/react';
 import './index.css';
-import Navigation from './nav';
 import CardGroup from './cards';
 import BioGrid from './bios';
 
 const Resources = () => {
     return (
-        <Container maxW="100vw" bg="var(--green-gradient)">
-            <Navigation isDarkBackground={true} />
+        <Container maxW="1600px" minH="90vh" position="relative" overflow="hidden">
             <CardGroup />
             <BioGrid />
         </Container>
