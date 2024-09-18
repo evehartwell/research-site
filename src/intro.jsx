@@ -12,13 +12,13 @@ import {
 } from '@chakra-ui/react';
 
 const Intro = () => {
-    const padding = useBreakpointValue({ base: 4, md: 8, lg: 8 });
+    const padding = useBreakpointValue({ base: 4, md: 8, lg: 20 });
     const heroMaxWidth = useBreakpointValue({ base: "100%", md: "70%", lg: "60%" });
     const headingSize = useBreakpointValue({ base: "4xl", md: "5xl", lg: "6xl" });
 
     return (
         <Box
-            minH="90vh"
+            minH="100vh"
             position="relative"
             overflow="hidden"
             backgroundImage="url('/svg/infinity_color.svg')"

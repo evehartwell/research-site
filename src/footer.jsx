@@ -14,7 +14,6 @@ const Footer = () => {
         <Box as="footer" bg="none" color="var(--primary-color-2)" fontWeight="regular" textTransform="uppercase">
             <Flex
                 maxW="1600px"
-                height="10px"
                 mx="auto"
                 justify="space-between"
                 align="center"

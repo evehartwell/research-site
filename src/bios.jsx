@@ -17,7 +17,7 @@ const BioGrid = () => {
     const containerPadding = useBreakpointValue({ base: 4, sm: 6, md: 8, lg: 10 });
 
     return (
-        <Container maxW="1600px" minH="90vh" position="relative" overflow="hidden" p={containerPadding}>
+        <Container maxW="1600px" minH="90vh" position="relative" overflow="hidden" p={containerPadding} top={10}>
             <Heading 
                 as="h2" 
                 size={headingSize}

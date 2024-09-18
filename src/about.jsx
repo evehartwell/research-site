@@ -24,10 +24,11 @@ const AboutPage = () => {
                 top={0}
                 left={0}
                 right={0}
-                bottom={0}
+                bottom={10}
                 p={padding}
+                alignItems="flex-end"
             >
-                <VStack align="flex-start" spacing={8} maxW={contentMaxWidth}>
+                <VStack align="flex-start" spacing={6} maxW={contentMaxWidth}>
                     <Box>
                         <Heading fontSize={headingSize} textTransform="uppercase" fontWeight="regular" color="var(--primary-color-2)" mb={4}>
                             About The Author

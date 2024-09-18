@@ -17,7 +17,7 @@ const RelatedWorks = () => {
     const containerPadding = useBreakpointValue({ base: 2, sm: 3, md: 4, lg: 5 });
 
     return (
-        <Container maxW="1600px" minH="87vh" position="relative" overflow="hidden" p={containerPadding}>
+        <Container maxW="1600px" minH="92vh" position="relative" overflow="hidden" p={containerPadding} top={10}>
             <VStack spacing={8} align="start" p={containerPadding}>
                 <Box>
                     <Heading 

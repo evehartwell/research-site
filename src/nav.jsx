@@ -21,7 +21,7 @@ const Navigation = ({ isDarkBackground }) => {
     const hoverBorderColor = isDarkBackground ? 'var(--primary-color-1)' : 'var(--primary-color-2)'; // Adjust the hover border color
 
     return (
-        <Box className="nav" position="relative" top={0} left={0} right={0} zIndex={1000}>
+        <Box className="nav" position="fixed" top={0} left={0} right={0} zIndex={1000}>
             <Flex
                 color={textColor}
                 minH={'60px'}
@@ -71,7 +71,7 @@ const DesktopNav = ({ textColor, hoverBorderColor }) => {
                                 borderColor: hoverBorderColor, // Dynamic hover border color
                             },
                             _focus: {
-                                outline: `2px solid ${textColor}`, // Dynamic focus outline color
+                                outline: `1px solid ${textColor}`, // Dynamic focus outline color
                             },
                         }}
                     >
@@ -104,7 +104,7 @@ const MobileNav = ({ textColor, hoverBorderColor }) => {
                                 borderColor: hoverBorderColor, // Dynamic hover border color
                             },
                             _focus: {
-                                outline: `2px solid ${textColor}`, // Dynamic focus outline color
+                                outline: `1px solid ${textColor}`, // Dynamic focus outline color
                             },
                         }}
                     >
